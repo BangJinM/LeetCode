@@ -8,6 +8,10 @@
 
 // @lc code=start
 
+#include <string>
+#include <unordered_map>
+
+using namespace std;
 
 class Solution
 {
@@ -45,10 +49,10 @@ public:
     {
         if (s.size() == 0)
             return 0;
-        std::map<int, int> map;
-        int max = 0;
-        int index = 0;
-        int maxsize = s.size();
+        std::unordered_map<int, int> map;
+        int                          max     = 0;
+        int                          index   = 0;
+        int                          maxsize = s.size();
 
         int begin = 0;
 
@@ -60,17 +64,16 @@ public:
                 if (map[index_c] >= begin)
                 {
                     int size = index - begin;
-                    max = size > max ? size : max;
-                    begin = map[index_c] + 1;
+                    max      = size > max ? size : max;
+                    begin    = map[index_c] + 1;
                 }
             }
             map[index_c] = index;
             index++;
         }
         int size = maxsize - begin;
-        max = size > max ? size : max;
+        max      = size > max ? size : max;
         return max;
     }
 };
-
 // @lc code=end
