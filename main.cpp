@@ -1,10 +1,14 @@
 
-#include "code/leetcode_6.cpp"
-#include<string>
+#include <string>
+#include <vector>
+#include "code/leetcode_209.cpp"
 using namespace std;
-int main(){
+int main()
+{
+    std::vector<int> nums = {5,1,3,5,10,7,4,9,2,8};
+
     Solution solution;
-    auto str =solution.convert("PAYPALISHIRING", 3);
-    printf(str.c_str());
+    auto     str = solution.minSubArrayLen(15, nums);
+
     return 0;
 }
